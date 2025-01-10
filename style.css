@@ -211,7 +211,7 @@ h1{
     font-weight: 600;
     transition: all 3000ms ease;
     padding: 1rem;
-    width: 8rem;
+    width: 10rem;
     border-radius: 2rem;
 }
 
@@ -242,4 +242,73 @@ h1{
 
 .btn-container{
     gap:1rem;
+}
+
+#about .section_text {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space between text and image */
+}
+
+#about .section_pic-container {
+    margin-left: 20px; /* Add some space between text and image */
+}
+
+#about .section_text-p2 {
+    max-width: 600px; /* Adjust the width of the text container */
+}
+
+#titleabout{
+    text-align: center;
+    width: 100%;
+}
+
+#contact_text{
+    text-align: center;
+    width: 100%;
+}
+
+#contact .title {
+    text-align: center;
+    width: 100%;
+}
+
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    gap: 1rem; /* Add gap between elements */
+}
+
+.contact-info-upper-container{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    border-radius: 2rem;
+    border: rgb(53, 53, 53) 0.1rem solid;
+    background: rgb(250, 250, 250);
+    max-width: 800px; /* Increase max-width to fit both items */
+    margin: 1rem 0; /* Add vertical margin */
+    padding: 1rem; /* Add some padding */
+}
+
+.contact-info-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin: 0 1rem; /* Add some margin between items */
+}
+
+.contact-info-container img {
+    margin-right: 10px; /* Add some space between the icon and text */
+}
+
+footer{
+    height: 26vh;
+    margin: 0 1rem;
+}
+footer p{
+    text-align: center;
+    margin-top: 1rem;
 }
