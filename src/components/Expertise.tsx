@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faPython } from '@fortawesome/free-brands-svg-icons';
@@ -35,7 +36,14 @@ const labelsThird = [
 
 function Expertise() {
     return (
-    <div className="container" id="expertise">
+    <motion.div
+        className="container"
+        id="expertise"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+    >
         <div className="skills-container">
             <h1>Expertise</h1>
             <div className="skills-grid">
@@ -76,7 +84,7 @@ function Expertise() {
                 </div>
             </div>
         </div>
-    </div>
+    </motion.div>
     );
 }
 

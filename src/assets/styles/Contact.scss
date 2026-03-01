@@ -46,3 +46,9 @@ form {
   width: 100% !important;
   margin-bottom: 15px !important;
 }
+
+@media screen and (max-width: 768px) {
+  .form-flex {
+    flex-direction: column;
+  }
+}
