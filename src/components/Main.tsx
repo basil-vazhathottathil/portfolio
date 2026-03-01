@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import '../assets/styles/Main.scss';
+import bgDark from '../assets/images/bg-dark.png';
+import bgLight from '../assets/images/bg-light.png';
 
 const greeting = "Hey there! 👋";
 const name = "I'm Basil Vazhathottathil";
 const subtitle = "Aspiring Software Engineer";
 
-function Main() {
+function Main({ mode }: { mode: string }) {
   const [headingText, setHeadingText] = useState('');
   const [subtitleText, setSubtitleText] = useState('');
   const [phase, setPhase] = useState<'typing-greeting' | 'pause-greeting' | 'deleting-greeting' | 'typing-name' | 'typing-subtitle' | 'done'>('typing-greeting');
@@ -72,6 +75,22 @@ function Main() {
   return (
     <div className="container">
       <div className="about-section">
+        <motion.img
+          key={mode}
+          src={mode === 'dark' ? bgDark : bgLight}
+          alt=""
+          className="bg-image"
+          animate={{
+            scale: [1, 1.1, 1],
+            x: [0, 30, -20, 0],
+            y: [0, -15, 10, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
         <div className="image-wrapper">
           <img src={process.env.PUBLIC_URL + "/me.jpg"} alt="Avatar" />
         </div>
