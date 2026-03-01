@@ -1,7 +1,7 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import '../assets/styles/Timeline.scss'
@@ -16,50 +16,50 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
+            date="Aug 2025 - present"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Central Zone Lead</h3>
+            <h4 className="vertical-timeline-element-subtitle">Mulearn Foundation</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              Coordinating technical initiatives across 40+ campuses. Working closely with operations and technical teams on event execution and cross-team communication.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2022"
+            date="Feb 2024 - Aug 2025"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">District Lead Intern</h3>
+            <h4 className="vertical-timeline-element-subtitle">Mulearn Foundation</h4>
             <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
+              Led 13 campus chapters, organized technical sessions, and supported software-related events and community programs.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2021 - 2021"
+            date="Sep 2023 - present"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">CFO / Skills Officer</h3>
+            <h4 className="vertical-timeline-element-subtitle">IEDC SJCET</h4>
             <p>
-              Full-stack Development, API Development, User Experience
+              Managing budgeting for technical events and workshops. Organizing skill-development programs focused on software technologies.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2020"
+            date="2022 - 2026 (Expected)"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
+            icon={<FontAwesomeIcon icon={faGraduationCap} />}
           >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
+            <h3 className="vertical-timeline-element-title">B.Tech in Computer Science and Engineering</h3>
+            <h4 className="vertical-timeline-element-subtitle">St. Joseph's College of Engineering and Technology, Palai</h4>
             <p>
-              Automation, Data Governance, Statistical Analysis
+              Computer Science Engineering undergraduate with focus on backend APIs, AI-powered systems, and React-based frontends.
             </p>
           </VerticalTimelineElement>
         </VerticalTimeline>
