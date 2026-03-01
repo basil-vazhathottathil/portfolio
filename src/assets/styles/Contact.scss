@@ -7,6 +7,11 @@
 .contact-form {
   padding-top: 20px;
 
+  input,
+  textarea {
+    color: rgb(39, 40, 34) !important;
+  }
+
   button {
     float: right;
     background-color: white;

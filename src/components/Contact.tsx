@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
@@ -16,6 +16,9 @@ function Contact() {
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
 
+  const [sending, setSending] = useState<boolean>(false);
+  const [sent, setSent] = useState<boolean>(false);
+
   const form = useRef();
 
   const sendEmail = (e: any) => {
@@ -25,28 +28,31 @@ function Contact() {
     setEmailError(email === '');
     setMessageError(message === '');
 
-    /* Uncomment below if you want to enable the emailJS */
+    if (name !== '' && email !== '' && message !== '') {
+      setSending(true);
+      var templateParams = {
+        name: name,
+        email: email,
+        message: message
+      };
 
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
-
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
+      emailjs.send('service_4ow0yeu', 'template_xo9yc14', templateParams, 'uBfgIZNWsmnkUjKOn').then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          setSending(false);
+          setSent(true);
+          setName('');
+          setEmail('');
+          setMessage('');
+          setTimeout(() => setSent(false), 3000);
+        },
+        (error) => {
+          console.log('FAILED...', error);
+          setSending(false);
+          alert('Failed to send message. Please try again.');
+        },
+      );
+    }
   };
 
   return (
@@ -77,7 +83,7 @@ function Contact() {
               />
               <TextField
                 required
-                id="outlined-required"
+                id="outlined-required-email"
                 label="Email / Phone"
                 placeholder="How can I reach you?"
                 value={email}
@@ -103,8 +109,13 @@ function Contact() {
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
             />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
+            <Button
+              variant="contained"
+              endIcon={<SendIcon />}
+              onClick={sendEmail}
+              disabled={sending || sent}
+            >
+              {sending ? 'Sending...' : sent ? 'Sent ✓' : 'Send'}
             </Button>
           </Box>
         </div>
